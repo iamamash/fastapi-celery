@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flower
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flower
+  template:
+    metadata:
+      labels:
+        app: flower
+    spec:
+      containers:
+      - name: flower
+        image: gregsi/latest-celery-flower-docker:latest
+        env:
+        - name: AMQP_USERNAME
+          value: "user"
+        - name: AMQP_PASSWORD
+          value: "bitnami"
+        - name: AMQP_ADMIN_USERNAME
+          value: "user"
+        - name: AMQP_ADMIN_PASSWORD
+          value: "bitnami"
+        - name: AMQP_HOST
+          value: "rabbitmq"
+        - name: AMQP_PORT
+          value: "5672"
+        - name: AMQP_ADMIN_HOST
+          value: "rabbitmq"
+        - name: AMQP_ADMIN_PORT
+          value: "15672"
+        - name: FLOWER_BASIC_AUTH
+          value: "user:test"
+        ports:
+        - containerPort: 5555

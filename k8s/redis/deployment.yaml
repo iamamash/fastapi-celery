@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-db
+  template:
+    metadata:
+      labels:
+        app: redis-db
+        tier: backend
+    spec:
+      containers:
+        - name: redis-db
+          image: bitnami/redis:5.0.4
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-credentials
+                  key: REDIS_PASSWORD
+
+          ports:
+            - containerPort: 6379
+          volumeMounts:
+            - name: redis-volume-mount
+              mountPath: /bitnami/redis/data
+
+      volumes:
+        - name: redis-volume-mount
+          persistentVolumeClaim:
+            claimName: redis-pvc

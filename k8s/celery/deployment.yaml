@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: celery-master
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: celery-master
+  template:
+    metadata:
+      labels:
+        app: celery-master
+    spec:
+      containers:
+      - name: celery-master
+        image: iamamash/fastapi-celery:latest
+        command: ['poetry','run','hypercorn','app/app/main:app','--bind','0.0.0.0:8000','--reload']
+        ports:
+          - containerPort: 8000
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: celery-worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: celery-worker
+  template:
+    metadata:
+      labels:
+        app: celery-worker
+    spec:
+      containers:
+      - name: celery-worker
+        image: iamamash/fastapi-celery:latest
+        command: ['poetry','run','celery','-A','app.app.worker.celery_worker','worker','-l','info','-Q','test-queue','-c','1']
