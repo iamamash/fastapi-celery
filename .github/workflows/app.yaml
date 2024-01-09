@@ -1,0 +1,28 @@
+name: FastAPI-Celery app deployment
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    - name: Build
+      run: |
+        # Build the docker image from Dockerfile
+        docker build . -t fastapi-celery:latest
+
+        # Docker login and push
+        docker login -u ${{ secrets.USER }} -p ${{ secrets.PASSWORD }}
+        docker tag fastapi-celery:latest ${{ secrets.USER }}/fastapi-celery:latest
+        docker push ${{ secrets.USER }}/fastapi-celery:latest
