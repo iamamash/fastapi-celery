@@ -1,4 +1,4 @@
-.# Project Overview
+# Project Overview
 
 This project serves as a comprehensive example demonstrating the integration of FastAPI, Celery with RabbitMQ as the task queue, Redis as the Celery backend, and Flower for monitoring Celery tasks. By combining these technologies, this project showcases a powerful asynchronous task processing system with a robust monitoring solution.
 
