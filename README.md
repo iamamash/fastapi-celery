@@ -245,6 +245,9 @@ These strategies helped tackle challenges encountered during the project, levera
 2. **Limited Branching Strategy:**
    While implementing a separate development branch (`dev`) is commendable, adopting a more comprehensive branching strategy, such as feature branches or release branches, could enhance collaboration and version control in larger-scale projects.
 
+3. **Missed AWS Credentials in CD Pipeline:**
+   I unintentionally omitted adding AWS Credentials in the CD Pipeline, realizing it only after completing the project and deleting the cluster. Though a quick addition, I missed incorporating it in the YAML file, hindering the deployment to the Kubernetes (k8s) cluster. I regret this oversight and aim to prioritize complete configuration in future projects for seamless deployment.
+
 ## Contributing
 Contributions are welcome! If you have suggestions, feature requests, or bug reports, please submit an issue or open a pull request.
 
