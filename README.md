@@ -244,3 +244,12 @@ These strategies helped tackle challenges encountered during the project, levera
 
 2. **Limited Branching Strategy:**
    While implementing a separate development branch (`dev`) is commendable, adopting a more comprehensive branching strategy, such as feature branches or release branches, could enhance collaboration and version control in larger-scale projects.
+
+## Contributing
+Contributions are welcome! If you have suggestions, feature requests, or bug reports, please submit an issue or open a pull request.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+Special thanks to the creators and maintainers of FastAPI, Celery, RabbitMQ, Redis, and Flower for their incredible work and contributions to the open-source community.
