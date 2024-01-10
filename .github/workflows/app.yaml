@@ -23,3 +23,19 @@ jobs:
         run: |
           docker build . -t fastapi-celery:latest
           docker tag fastapi-celery:latest ${{ secrets.USER }}/fastapi-celery:latest
+
+      # Configure AWS credentials
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Update AWS EKS Kubeconifg
+   #  - name: Update Kubeconfig
+   #    run: aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name ${{ secrets.AWS_EKS_CLUSTER_NAME }}
+
+        # Update K8s Configs
+   #  - name: Update K8s Configs
+   #    run: kubectl apply -f k8s/
