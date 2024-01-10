@@ -19,6 +19,10 @@ Redis is utilized as the Celery backend, providing a robust storage solution for
 ### Flower
 Flower is a real-time web-based monitoring tool for Celery. It provides a user-friendly dashboard to monitor task progress, success rates, failure rates, and other essential metrics, offering insights into the performance of Celery workers.
 
+## Usage
+1. Define and dispatch Celery tasks from your FastAPI endpoints.
+2. Monitor task execution and performance through the Flower dashboard.
+
 ## Getting Started
 
 ### Prerequisites for running application/worker
@@ -43,10 +47,6 @@ Flower is a real-time web-based monitoring tool for Celery. It provides a user-f
      - **Password:** test
    
    This dashboard provides insights into Celery task progress, success rates, and failures.
-
-## Usage
-1. Define and dispatch Celery tasks from your FastAPI endpoints.
-2. Monitor task execution and performance through the Flower dashboard.
 
 ### Run the project without Docker
 
