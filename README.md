@@ -110,7 +110,7 @@ This deployment setup utilizing GitHub Actions for CD and AWS EKS for Kubernetes
    sudo apt update
    sudo apt install docker.io
    sudo apt install docker-compose
-   sudo chown $user /var/run/docker.sock  # Grant permissions to Docker for the user
+   sudo chown $USER /var/run/docker.sock  # Grant permissions to Docker for the user
    ```
 
 3. **AWS IAM Setup:**
@@ -133,7 +133,7 @@ This deployment setup utilizing GitHub Actions for CD and AWS EKS for Kubernetes
    curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
    chmod +x ./kubectl
    sudo mv ./kubectl /usr/local/bin
-   kubectl version --short --client  # Check version
+   kubectl version  # Check version
    ```
 
 6. **Install eksctl:**
@@ -166,8 +166,6 @@ This deployment setup utilizing GitHub Actions for CD and AWS EKS for Kubernetes
    eksctl delete cluster --name <cluster-name> --region <region-name>
    ```
 Following these steps will guide you through setting up Docker, AWS IAM, AWS CLI, Kubernetes tools, cluster creation, applying manifests, managing configurations, and deleting the cluster for the FastAPI-Celery project.
-
-Certainly! Here's a refined version of the challenges you faced while working on the project for your README:
 
 ---
 
@@ -239,7 +237,6 @@ These strategies helped tackle challenges encountered during the project, levera
 
 1. **Overly Permissive AWS IAM Access:**
    Granted AWS IAM Administrator Access for expedited project delivery. However, in a production environment, this practice poses security risks and is not recommended due to its extensive permissions.
-Certainly, based on the information provided, here are a couple of concise cons:
 
 2. **Limited Branching Strategy:**
    While implementing a separate development branch (`dev`) is commendable, adopting a more comprehensive branching strategy, such as feature branches or release branches, could enhance collaboration and version control in larger-scale projects.
