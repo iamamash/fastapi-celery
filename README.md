@@ -44,6 +44,10 @@ Flower is a real-time web-based monitoring tool for Celery. It provides a user-f
    
    This dashboard provides insights into Celery task progress, success rates, and failures.
 
+## Usage
+1. Define and dispatch Celery tasks from your FastAPI endpoints.
+2. Monitor task execution and performance through the Flower dashboard.
+
 ### Run the project without Docker
 
 #### Requirements/Dependencies
