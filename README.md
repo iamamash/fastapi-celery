@@ -55,11 +55,11 @@ Flower is a real-time web-based monitoring tool for Celery. It provides a user-f
 
 > Start RabbitMQ, Redis, and Flower services using ```docker-compose -f docker-compose-services.yml up```.
 
-### Install Dependencies
+#### Install Dependencies
 
 Execute the following command: ```poetry install --dev```
 
-### Run FastAPI App and Celery Worker
+#### Run FastAPI App and Celery Worker
 
 1. **Start the FastAPI Web Application:**
    Execute ```poetry run hypercorn app/main:app --reload``` to launch the FastAPI web server.
