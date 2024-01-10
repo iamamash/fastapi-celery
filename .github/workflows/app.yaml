@@ -36,9 +36,9 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}  
 
       # Updating AWS EKS Cluster
-      - name: Updating AWS EKS Cluster
-        run: aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name ${{ secrets.AWS_EKS_CLUSTER_NAME }}
+    - name: Updating AWS EKS Cluster
+      run: aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name ${{ secrets.AWS_EKS_CLUSTER_NAME }}
 
-      # Deploying K8s Configs
-      - name: K8s Configs Deployment
-        run: kubectl apply -f k8s/
+    # Deploying K8s Configs
+    - name: K8s Configs Deployment
+      run: kubectl apply -f k8s/
