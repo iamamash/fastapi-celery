@@ -77,6 +77,8 @@ Execute the following command: ```poetry install --dev```
      - **Password:** test
    Access the Flower monitoring dashboard to monitor Celery task progress and status.
 
+---
+
 ## Deployment of FastAPI-Celery
 
 ### Setup Implementation Overview
@@ -211,6 +213,8 @@ These challenges encompassed various aspects, from learning new technologies to 
    Identified that the root cause behind the pods' pending state was attributed to using only one node in the Kubernetes cluster, resulting in exhausted memory. Addressed this by expanding knowledge through Stack Overflow solutions, ultimately resolving the issue.
 
 These strategies helped tackle challenges encountered during the project, leveraging external resources, community insights, and targeted learning to overcome obstacles in understanding, debugging, skill adaptation, and troubleshooting within the GitHub project environment.
+
+---
 
 ### Pros and Cons of Approach
 
